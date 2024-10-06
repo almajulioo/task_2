@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Pendaftaran</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h2 class="title">Pendaftaran</h2>
+        <form class="form" action="detail.html" method="POST" onsubmit="redirectToDetail()">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="umur">Umur:</label>
+            <input type="number" id="umur" name="umur" required />
+
+            <input type="submit" value="Daftar" />
+        </form>
+    </body>
+
+    <script>
+        function redirectToDetail() {
+            // Mencegah form submit secara normal
+            event.preventDefault();
+            // Redirect ke halaman detail
+            window.location.href =
+                'detail.html?nama=' +
+                document.getElementById('nama').value +
+                '&email=' +
+                document.getElementById('email').value +
+                '&umur=' +
+                document.getElementById('umur').value;
+        }
+    </script>
+</html>
